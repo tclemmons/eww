@@ -1,0 +1,23 @@
+@import "colors.scss";
+
+* {
+  all: unset;
+}
+
+.bar {
+  background-color: $background;
+  color: $foreground;
+  font-size: 1em;
+  font-family: $font;
+}
+
+.button {
+  color: $hmagenta;
+  margin: 0px 3px;
+}
+.button.focused {
+  color: $hwhite;
+}
+.button.urgent {
+  color: $hred;
+}

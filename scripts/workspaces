@@ -1,0 +1,126 @@
+#!/usr/bin/zsh
+
+focused='󰝥'
+unfocused='󱡓'
+empty='󰝦'
+
+ws1='ID 1'
+ws2='ID 2'
+ws3='ID 3'
+ws4='ID 4'
+ws5='ID 5'
+ws6='ID 6'
+ws7='ID 7'
+ws8='ID 8'
+ws9='ID 9'
+
+w1=''
+w2=''
+w3=''
+w4=''
+w5=''
+w6=''
+w7=''
+w8=''
+w9=''
+
+function workspaces(){
+
+  ws1active=$(hyprctl activeworkspace | grep $ws1)
+  ws2active=$(hyprctl activeworkspace | grep $ws2)
+  ws3active=$(hyprctl activeworkspace | grep $ws3)
+  ws4active=$(hyprctl activeworkspace | grep $ws4)
+  ws5active=$(hyprctl activeworkspace | grep $ws5)
+  ws6active=$(hyprctl activeworkspace | grep $ws6)
+  ws7active=$(hyprctl activeworkspace | grep $ws7)
+  ws8active=$(hyprctl activeworkspace | grep $ws8)
+  ws9active=$(hyprctl activeworkspace | grep $ws9)
+
+  ws1has=$(hyprctl workspaces | grep $ws1)
+  ws2has=$(hyprctl workspaces | grep $ws2)
+  ws3has=$(hyprctl workspaces | grep $ws3)
+  ws4has=$(hyprctl workspaces | grep $ws4)
+  ws5has=$(hyprctl workspaces | grep $ws5)
+  ws6has=$(hyprctl workspaces | grep $ws6)
+  ws7has=$(hyprctl workspaces | grep $ws7)
+  ws8has=$(hyprctl workspaces | grep $ws8)
+  ws9has=$(hyprctl workspaces | grep $ws9)
+
+  if [[ $ws1active ]];then
+    w1=$(echo $focused)
+  elif [[ $ws1has ]];then
+    w1=$(echo $unfocused)
+  else 
+    w1=$(echo $empty)
+  fi
+
+  if [[ $ws2active ]];then
+    w2=$(echo $focused)
+  elif [[ $ws2has ]];then
+    w2=$(echo $unfocused)
+  else 
+    w2=$(echo $empty)
+  fi
+
+  if [[ $ws3active ]];then
+    w3=$(echo $focused)
+  elif [[ $ws3has ]];then
+    w3=$(echo $unfocused)
+  else 
+    w3=$(echo $empty)
+  fi
+
+  if [[ $ws4active ]];then
+    w4=$(echo $focused)
+  elif [[ $ws4has ]];then
+    w4=$(echo $unfocused)
+  else 
+    w4=$(echo $empty)
+  fi
+
+  if [[ $ws5active ]];then
+    w5=$(echo $focused)
+  elif [[ $ws5has ]];then
+    w5=$(echo $unfocused)
+  else 
+    w5=$(echo $empty)
+  fi
+
+  if [[ $ws6active ]];then
+    w6=$(echo $focused)
+  elif [[ $ws6has ]];then
+    w6=$(echo $unfocused)
+  else 
+    w6=$(echo $empty)
+  fi
+
+  if [[ $ws7active ]];then
+    w7=$(echo $focused)
+  elif [[ $ws7has ]];then
+    w7=$(echo $unfocused)
+  else 
+    w7=$(echo $empty)
+  fi
+
+  if [[ $ws8active ]];then
+    w8=$(echo $focused)
+  elif [[ $ws8has ]];then
+    w8=$(echo $unfocused)
+  else 
+    w8=$(echo $empty)
+  fi
+
+  if [[ $ws9active ]];then
+    w9=$(echo $focused)
+  elif [[ $ws9has ]];then
+    w9=$(echo $unfocused)
+  else 
+    w9=$(echo $empty)
+  fi
+  echo "(box :orientation \"h\" :spacing 5 :space-evenly false (button :onclick \"hyprctl dispatch workspace 1\" \"$w1\") (button :onclick \"hyprctl dispatch workspace 2\" \"$w2\") (button :onclick \"hyprctl dispatch workspace 3\" \"$w3\") (button :onclick \"hyprctl dispatch workspace 4\" \"$w4\") (button :onclick \"hyprctl dispatch workspace 5\" \"$w5\") (button :onclick \"hyprctl dispatch workspace 6\" \"$w6\") (button :onclick \"hyprctl dispatch workspace 7\" \"$w7\") (button :onclick \"hyprctl dispatch workspace 8\" \"$w8\") (button :onclick \"hyprctl dispatch workspace 9\" \"$w9\"))"
+
+}
+while : ; do
+  workspaces
+done
+

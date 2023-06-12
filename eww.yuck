@@ -1,9 +1,49 @@
 ;; Variables
-(deflisten workspace "scripts/workspaces")
+(deflisten workspace "tail -F workspaces.config")
+(defpoll timepoll
+  :interval '1s'
+  :initial 'loading...'
+  'date +%I:%M" "%p'
+)
+(defpoll datepoll
+  :interval '1s'
+  :initial 'loading...'
+  'date +%D'
+)
+(defpoll networkpoll
+  :interval '3s'
+  :initial 'obtaining network statistics...'
+  'scripts/networkobtain'
+)
 
 (defwidget workspaces []
   (literal :content workspace)
 )
+(defwidget time [] 
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    (label :text timepoll)
+  )
+)  
+(defwidget date []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    (label :text datepoll)
+  )
+)
+(defwidget network []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    (label :text networkpoll)
+  )
+)
+
 (defwidget left [] 
   (box
     :orientation "h"
@@ -12,12 +52,33 @@
     (workspaces)
   )
 )
+(defwidget center [] 
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "center"
+    (time)
+  )
+)
+(defwidget right []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :spacing 8
+    :halign "end"
+    (network)
+    (date)
+;    (mail)
+ )
+)
 
 (defwidget bar []
   (box
     :class "bar"
     :orientation "h"
     (left)
+    (center)
+    (right)
   )
 )
 
@@ -39,5 +100,20 @@
     (bar) 
 )
 
+(defwindow bar2
+  :monitor 1
 
+  :geometry
+  (geometry 
+    :x "0%"
+    :y "0"
+    :width "100%"
+    :height "0"
+    :anchor "top center"
+  )
 
+  :stacking "fg"
+  :exclusive false 
+  
+    (bar) 
+)

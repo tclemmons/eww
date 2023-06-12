@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+currentNet=$(nmcli | awk '/wlp6s0/{print $4}' | tr -s "[:space:]")
+
+#[[ -z $currentNet ]] && strength=$(echo "no network information available at this time")
+#[[ -n $currentNet ]] && strength=$(nmcli -f IN-USE,SIGNAL device wifi  | grep '*' | awk '{print $2}')
+
+echo  $currentNet 
+
+#'\n'$strength
+

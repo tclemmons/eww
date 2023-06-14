@@ -1,43 +1,13 @@
-;; Variables
-(deflisten workspace "scripts/workspaces")
+;;(include 'experimental/others.yuck')
 
-(defwidget workspaces []
-  (literal :content workspace)
-)
-(defwidget left [] 
-  (box
-    :orientation "h"
-    :space-evenly false
-    :halign "start"
-    (workspaces)
-  )
-)
-
-(defwidget bar []
-  (box
-    :class "bar"
-    :orientation "h"
-    (left)
-  )
-)
-
-(defwindow bar1
+(defwindow bars
   :monitor 0
-
-  :geometry
-  (geometry 
-    :x "0%"
-    :y "0"
-    :width "100%"
-    :height "0"
-    :anchor "top center"
+  :geometry (geometry :width '100%' :height '100%')
+  :stacking 'bottom'
+  :exlusive false
+  (box
+    :orientation 'horizontal' 
+    :class 'barl'
+    (label :text 'hi')
   )
-
-  :stacking "fg"
-  :exclusive false 
-  
-    (bar) 
 )
-
-
-

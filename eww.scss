@@ -4,6 +4,9 @@
   all: unset;
 }
 
-.bar {
-  background-color: $black;
+.barl {
+  background-image: url('/home/tclemmons/Pictures/backgrounds/Crescent.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

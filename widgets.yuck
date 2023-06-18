@@ -1,0 +1,65 @@
+(deflisten workspace "tail -F workspace.config")
+
+(defwidget wallpaper []
+  (box
+  :space-evenly false
+  :orientation "v"
+  :class "layout-box"
+  :spacing 25
+  :style "background-image: url('./wallpaper.jpg')"
+)
+)
+
+(defwidget workspaces []
+  (box
+    :orientation "h"
+    :halign "start"
+      (literal
+        :content workspace
+        :class "workspace-config"
+      )
+    )
+  )
+
+(defwidget icons []
+  (box 
+    :orientation 'h'
+    (box
+      :spacing 25
+      :space-evenly true
+      :orientation 'h'
+      :class 'icon'
+      (eventbox 
+        :class 'plane'
+        (button :onclick 'notify-send "hi"'
+          (image 
+            :path 'plane.svg' 
+            :image-width 55 
+            :image-height 70
+          )
+        )
+      )
+          (image 
+            :path 'plane.svg' 
+            :image-width 55 
+            :image-height 70
+          )
+          (image 
+            :path 'plane.svg' 
+            :image-width 55 
+            :image-height 70
+          )
+    )
+  )
+)
+
+
+;(defwidget workspaces2 []
+;  (box
+;    :orientation "h"
+;    :halign "start"
+;    (label :text "hi"
+;      :style "color: white"
+;    )
+;  )
+;)

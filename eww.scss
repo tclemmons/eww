@@ -1,12 +1,37 @@
-@import "colors.scss";
-
 * {
   all: unset;
 }
 
-.barl {
-  background-image: url('/home/tclemmons/Pictures/backgrounds/Crescent.jpg');
-  background-size: cover;
-  background-position: center center;
+.layout-box {
+  background-size: contain;
   background-repeat: no-repeat;
 }
+
+.workspace-config {
+  color: #f2ecff;
+  padding: 0.01em 0.01em 0.01em 0.35em;
+  font-size: 16px;
+  background-color: #222222;
+  border-radius: 15px;
+  border-style: groove;
+}
+
+.test {
+  padding: 1em 1em 1em 1em;
+  font-size: 20px;
+  background-color: #434758;
+  border-radius: 15px;
+  border-style: groove;
+  border-color: #222222;
+  border-width: 2px;
+}
+.test .plane {
+  box-shadow: 5px 7px 5px -12px #292d3e;
+  opacity: 0.5;
+  transition-duration: 0.7s;
+}
+.test .plane:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=eww.scss.map */

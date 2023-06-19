@@ -1,0 +1,16 @@
+(include 'objects.yuck')
+
+(defwindow timeDisplay
+  :monitor 1
+  :stacking 'bg'
+  :geometry
+    (geometry
+      :width '10%'
+      :height '0%'
+      :x '1%'
+      :y '2%'
+      :anchor 'bottom right'
+    )
+  (clock)
+)
+

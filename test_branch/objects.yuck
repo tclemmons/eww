@@ -1,0 +1,27 @@
+(defpoll time 
+  :interval '1s'
+  :initial 'obtaining time...'
+ `date +'{"hour":"%I","min":"%M","pa":"%p"}'`
+)
+
+(defwidget timewid []
+  (label
+    :class 'clock'
+    :text {time.hour + ":" + time.min + time.pa}
+  ) 
+)
+
+
+(defwidget clock []
+  (box
+    :class 'icons'
+    :halign 'start'
+    :orientation: 'h'
+    :spacing 10
+    :space-evenly true
+    (timewid)
+  )
+)
+
+
+

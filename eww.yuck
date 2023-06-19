@@ -1,7 +1,7 @@
 (include 'widgets.yuck')
 
 (defwindow bars
-  :monitor 0
+  :monitor 1
   :geometry (geometry 
     :width '6%' 
     :height '10px'
@@ -20,7 +20,7 @@
 )
 
 (defwindow testwin 
-  :monitor 0
+  :monitor 1
   :geometry (geometry 
     :width '10%' 
     :height '0px'
@@ -37,7 +37,7 @@
 )
 
 (defwindow background 
-  :monitor 0
+  :monitor 1
   :stacking 'bottom'
   :windowtype 'normal'
   :exlusive false

@@ -1,9 +1,27 @@
-@import "colors.scss";
+* {
+  all: unset;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 * {
   all: unset;
 }
 
-.bar {
-  background-color: $black;
+.timedate {
+  font-family: Poppins Black;
+  opacity: 1;
+  color: #f07178;
+  padding: 3em;
 }
+.timedate .time {
+  font-size: 24;
+}
+.timedate .day {
+  font-size: 18;
+}
+
+/*# sourceMappingURL=eww.scss.map */

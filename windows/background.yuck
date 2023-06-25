@@ -1,0 +1,22 @@
+(defwindow background_monitor0
+  :monitor 0
+  :geometry
+  (geometry
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "bg"
+  :exclusive false
+  (label :style "background-image: url('wallpaper.jpg')" :class "background" "")
+)
+(defwindow background_monitor1
+  :monitor 1
+  :geometry
+  (geometry
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "bg"
+  :exclusive false
+  (label :style "background-image: url('wallpaper.jpg')" :class "background" "")
+)

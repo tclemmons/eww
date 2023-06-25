@@ -1,0 +1,23 @@
+(include "resources/objects/variables/timedate_variable.yuck")
+
+(defwidget timedate_widget []
+  (box
+    :spacing 10
+    :space-evenly false
+    :halign "start"
+    :orientation "v"
+    :class "timedate"
+    (box
+      :halign "end"
+      :valign "start"
+      :class "time"
+      (label :text "${time.hour}:${time.minute}:${time.second} ${time.period}")
+    )
+    (box
+      :valign "fill"
+      :class "day"
+      (label :text "${day.dayname}, ${day.month} ${day.day}, ${day.year}")
+    )
+    )
+  )
+

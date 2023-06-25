@@ -1,0 +1,28 @@
+(include "resources/objects/variables/volume_variable.yuck")
+(defvar isHover false)
+
+(defwidget volume_widget []
+  (eventbox
+    :onhover "eww update isHover=true"
+    :onhoverlost "eww update isHover=false"
+    (box
+      :spacing 2
+      :space-evenly false
+      :class "volume"
+      :orientation ""
+      :valign "start"
+      (revealer
+        :transition "slideright"
+        :reveal isHover
+        (scale 
+          :flipped true
+          :value volume_level
+          :onchange "amixer sset Master {}%; echo {}% > resources/objects/variables/saved_data/volume_level"
+          :min 0
+          :max 101
+          :orientation "horizontal"
+        )
+      )
+    )
+  )
+)

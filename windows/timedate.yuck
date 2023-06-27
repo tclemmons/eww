@@ -1,4 +1,4 @@
-(include "resources/objects/widgets/timedate_widget.yuck")
+(include "resources/objects/widgets/timedate/timedate_widget.yuck")
 
 (defwindow timedate_monitor0
   :monitor 0
@@ -19,7 +19,8 @@
   :geometry
   (geometry
     :width "10%"
-    :height "10%" :x "0%"
+    :height "10%" 
+    :x "0%"
     :y "0%"
     :anchor "bottom right"
   )

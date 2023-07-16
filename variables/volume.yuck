@@ -1,0 +1,13 @@
+(defvar volume_isHover false)
+(defvar initial_volume_poll true)
+(defvar volume_level "0")
+(defvar volume_icon "?")
+(defpoll initial_volume_level
+  :interval '1s'
+  :run-while initial_volume_poll
+  `
+  ./scripts/getInitLevel
+  eww -c . update volume_level=$(./scripts/getInitLevel);
+  eww -c . update initial_volume_poll=false;
+  `
+)

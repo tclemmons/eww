@@ -1,15 +1,13 @@
-(include "resources/objects/widgets/volume_widget.yuck")
+(include "widgets/volume.yuck")
 
 (defwindow volume_monitor0 
   :monitor 0
   :geometry
   (geometry
-    :width "10%"
+    :width "1%"
     :height "10%"
-    :x "0%"
-    :y "0px"
     :anchor "center center"
   )
   :stacking "fg"
-  (volume_widget)
+  (volume_widget :initial_volume_level initial_volume_level)
 )

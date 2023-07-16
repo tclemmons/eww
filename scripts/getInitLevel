@@ -1,0 +1,13 @@
+#!/usr/bin/zsh
+
+getInitLevel () {
+  amixer sget Master |
+  awk '/Front Left:/{print $5}' |
+  uniq |
+  sed 's/\[//g; s/\]//g; s/%//g;' |
+  tr -d "[:punct:]"; 
+}
+
+./scripts/setIcon $(getInitLevel)
+
+getInitLevel

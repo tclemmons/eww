@@ -1,4 +1,4 @@
-(include "resources/objects/widgets/timedate/timedate_widget.yuck")
+(include "widgets/timedate.yuck")
 
 (defwindow timedate_monitor0
   :monitor 0

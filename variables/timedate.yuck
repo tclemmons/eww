@@ -1,0 +1,10 @@
+(defpoll time 
+  :inital "obtaining time and date..."
+  :interval "1s"
+  `date +'{"hour":"%I","minute":"%M","second":"%S","period":"%p"}'`
+)
+(defpoll day
+  :inital "obtaining day of the month..."
+  :interval "1s"
+  `date +'{"month":"%b","day":"%d","year":"%Y","dayname":"%A"}'`
+)

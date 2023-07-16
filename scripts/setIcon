@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+
+function setIcon () {
+  [[ $1 -eq 0 ]] && eww -c . update volume_icon=
+  [[ $1 -ge 1 && $1 -le 60 ]] &&  eww -c . update volume_icon=
+  [[ $1 -ge 61 && $1 -le 100 ]] && eww -c . update volume_icon=
+}
+
+if [[ $1 = 'toggle' && $(amixer sget Master | grep "\[on\]") ]];then
+  exec eww -c . update volume_icon=
+elif [[ $1 = 'toggle' && $(amixer sget Master | grep "\[off\]") ]];then
+  exec setIcon $(eww -c . get volume_level)
+fi 
+
+exec setIcon $1

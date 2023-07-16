@@ -1,0 +1,22 @@
+(include 'widgets/volume.yuck')
+
+(defwindow rightbar
+  :stacking 'fg'
+  :monitor 0
+  :geometry
+  (geometry
+    :height '50%'
+    :width '2%'
+    :x '12px'
+    :anchor 'center right'
+  )
+  (box
+    :orientation 'v'
+    :halign 'center'
+    :valign 'center'
+    :spacing 2
+    :space-evenly false
+    :class 'rightbar'
+    (volume_widget :initial_volume_level initial_volume_level)
+  )
+)

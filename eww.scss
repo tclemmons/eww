@@ -29,7 +29,7 @@
 }
 
 scale trough {
-  background-color: #e0def4;
+  background-color: #26233a;
   border-radius: 5px;
   min-height: 80px;
   min-width: 10px;
@@ -41,8 +41,13 @@ scale trough {
 }
 
 .volume-button {
-  color: red;
-  background-color: #26233a;
+  color: #c4a7e7;
+  background-color: transparent;
+}
+
+.rightbar {
+  border-radius: 10px;
+  background-color: #6e6a86;
 }
 
 /*# sourceMappingURL=eww.scss.map */

@@ -6,9 +6,8 @@
     :onhoverlost 'eww -c . update volume_isHover=false'
     (box
       :orientation 'v'
-      :spacing 1
+      :spacing 10
       :space-evenly false
-      :valign 'end'
       (revealer
         :reveal volume_isHover
         :transition 'slideup'
@@ -23,7 +22,9 @@
         )
       )
     (box
-      (button :class 'volume-button' :onclick './scripts/setIcon "toggle"; amixer sset Master "toggle";' volume_icon)
+      :valign 'center'
+      :halign 'center'
+      (button :tooltip '${volume_level}%':class 'volume-button' :onclick './scripts/setIcon "toggle"; amixer sset Master "toggle";' volume_icon)
     )
     )
   )

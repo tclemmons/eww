@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+
+level=$(eww get volume_level)
+
+[[ $level 

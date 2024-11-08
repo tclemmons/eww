@@ -1,3 +1,4 @@
-(include "windows/timedate.yuck")
-(include "windows/background.yuck")
+(include 'windows/timedate.yuck')
+(include 'windows/background.yuck')
 (include 'windows/rightbar.yuck')
+;(include 'windows/battery')

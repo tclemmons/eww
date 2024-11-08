@@ -1,0 +1,9 @@
+(include 'variables/battery.yuck')
+
+(defwidget battery_widget [battery_level battery_status]
+    (literal
+      :content battery_level
+      :tooltip battery_status
+    )
+  )
+

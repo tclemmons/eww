@@ -1,4 +1,5 @@
 (include 'widgets/volume.yuck')
+(include 'widgets/battery.yuck')
 
 (defwindow rightbar
   :stacking 'fg'
@@ -18,5 +19,6 @@
     :space-evenly false
     :class 'rightbar'
     (volume_widget :initial_volume_level initial_volume_level)
+    (battery_widget :battery_level battery_level :battery_status battery_status)
   )
 )
